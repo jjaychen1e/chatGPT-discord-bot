@@ -30,7 +30,7 @@ async def send_split_message(self, response: str, message: Message, has_followed
         if self.is_replying_all == "True" or has_followed_up:
             await message.channel.send(response)
         else:
-            await message.followup.send(response)
+            await message.channel.send(response)
             has_followed_up = True
 
     return has_followed_up
